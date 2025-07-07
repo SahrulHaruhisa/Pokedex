@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    
+    <title>Pokémon List</title>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+    <style>
+      *{
+        list-style: none;
+      }
+        
+        .type-icon {
+            height:10px;
+            width: 10px;
+       
+        }
+
+        .evolution img {
+            height:50px;
+        }
+        td div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+       
+       
+        /* Type color backgrounds */
+.type-bg-fire { background-color: #f08030; color: white; }
+.type-bg-water { background-color: #6890f0; color: white; }
+.type-bg-grass { background-color: #78c850; color: white; }
+.type-bg-electric { background-color: #f8d030; color: black; }
+.type-bg-psychic { background-color: #f85888; color: white; }
+.type-bg-ice { background-color: #98d8d8; color: black; }
+.type-bg-dragon { background-color: #7038f8; color: white; }
+.type-bg-dark { background-color: #705848; color: white; }
+.type-bg-fairy { background-color: #ee99ac; color: black; }
+.type-bg-normal { background-color: #a8a878; color: black; }
+.type-bg-poison { background-color: #a040a0; color: white; }
+.type-bg-ground { background-color: #e0c068; color: black; }
+.type-bg-flying { background-color: #a890f0; color: black; }
+.type-bg-bug { background-color: #a8b820; color: black; }
+.type-bg-rock { background-color: #b8a038; color: white; }
+.type-bg-ghost { background-color: #705898; color: white; }
+.type-bg-steel { background-color: #b8b8d0; color: black; }
+.type-bg-fighting { background-color: #c03028; color: white; }
+
+.type-label {
+    padding:5px 4px;
+    border-radius: 5px;
+    
+   
+}
+.img20x{
+    width: 100%;
+    height: 100%;
+}
+.next{
+   max-width: 50%;
+    height: 80%;
+}
+ 
+    .typez{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        gap: 5px;
+      
+    }
+     .typez span{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+        .typemega1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        gap: 5px;
+      
+    }
+    .typemega1 span{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    
+        .typemega2{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        gap: 5px;
+      
+    }
+    .typemega2 span{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    
+        .typegiga{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
+        gap: 5px;
+      
+    }
+    .typegiga span{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    .item2 img{
+        height: 50px;
+        width: 50px;
+    }
+    /* img {
+    height: 50px;
+      width: 50px;
+  } */
+  .first{
+    width: 5%;
+    text-align: center;
+  }
+    </style>
+    
+</head>
+<body>
+
+
+
+
+ <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                 
+                    <h2>Poke<span class="danger">Dex</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        person_outline
+                    </span>
+                    <h3>Users</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>History</h3>
+                </a>
+                <a href="/items/gridz" >
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Crud Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="/pokemon/list" class="active">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Pokedex List</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Login</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+           <main>
+             
+            <figure class="jumlah-items">
+                <div class="items-all">
+                    <p>Pokedex</p>
+                    <div class="item2">
+                    <h2 th:text="${totalCount}">231</h2>
+                    
+                       <img th:src="@{/imgs/types/poke.png}">
+                   
+                    </div>
+                </div>
+            </figure>
+           
+            <div class="item-bg">
+                 <header class="tabel-head">
+                    <h1>Pokémon List</h1>
+                    <form method="get" th:action="@{/pokemon/list}" class="search">
+                        <input type="text" name="keyword" placeholder="Search by name" th:value="${keyword}">
+                            <button type="submit">
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                     </form>
+                 </header>
+<table class="tabel">
+    <thead>
+        <tr>
+             <th>Dex Number</th> 
+            <th>Image</th>
+            <th>Name</th>
+            <th>Types</th>
+            <th>Evolution 1</th>
+            <th>Evolution 2</th>
+            <th>Evolution 3</th>
+             <th>Mega evolusi 1</th>
+             <th>Mega evolusi 2</th>
+             <th>Giganmax evolusi</th>
+          
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pokemon : ${pokemonPage.content}">
+<td th:text="${pokemon.dexNumber != null} ? '#'+${T(java.lang.String).format('%03d', pokemon.dexNumber)} : '-'" class="first">#001</td>
+
+
+        <td><img th:src="${pokemon.imageUrl}" alt="Image" width="80"></td>
+        <td th:text="${pokemon.name}">Name</td>
+    <td class="typez">
+    <span th:if="${pokemon.type1}" th:class="'type-label type-bg-' + ${pokemon.type1}">
+        <img th:src="@{/imgs/types/{type}.png(type=${pokemon.type1})}" alt="type1" class="type-icon">
+        <span th:text="${pokemon.type1}">type1</span>
+    </span><br th:if="${pokemon.type2 != null}">
+    <span th:if="${pokemon.type2}" th:class="'type-label type-bg-' + ${pokemon.type2}">
+        <img th:src="@{/imgs/types/{type}.png(type=${pokemon.type2})}" alt="type2" class="type-icon">
+        <span th:text="${pokemon.type2}">type2</span>
+    </span>
+</td>
+
+        <td>
+            <div th:if="${pokemon.evolution1Image}">
+                <img th:src="${pokemon.evolution1Image}" alt="Evo1"><br>
+                <span th:text="${pokemon.evolution1}">Evo1</span>
+            </div>
+        </td>
+        <td>
+            <div th:if="${pokemon.evolution2Image}">
+                <img th:src="${pokemon.evolution2Image}" alt="Evo2"><br>
+                <span th:text="${pokemon.evolution2}">Evo2</span>
+            </div>
+        </td>
+        <td>
+            <div th:if="${pokemon.evolution3Image}">
+                <img th:src="${pokemon.evolution3Image}" alt="Evo3"><br>
+                <span th:text="${pokemon.evolution3}">Evo3</span>
+            </div>
+        </td>
+        <!-- Mega Evolusi 1 -->
+<td>
+    <div th:if="${pokemon.mega1Image}">
+        <div class="img20x"> <img th:src="${pokemon.mega1Image}" alt="Mega1" height="50" class="next"></div>
+       <br>
+        <span th:text="${pokemon.mega1Name}">Mega1</span><br>
+       
+    </div>
+</td>
+
+<!-- Mega Evolusi 2 -->
+<td>
+    
+    <div th:if="${pokemon.mega2Image}">
+        <div class="img20x">
+       
+               <img th:src="${pokemon.mega2Image}" alt="Mega2" height="50" class="next">
+   
+    </div>
+     <br>
+        <span th:text="${pokemon.mega2Name}">Mega2</span><br>
+    </div>
+</td>
+
+<!-- Gigantamax -->
+<td>
+    
+    <div th:if="${pokemon.gmaxImage}">
+        <div class="img20x">
+        <img th:src="${pokemon.gmaxImage}" alt="Gmax" height="50" class="next">
+    </div>
+       <br>
+        <span th:text="${pokemon.gmaxName}">Gmax</span><br>
+        
+    </div>
+</td>
+   
+
+
+
+   
+    
+  
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div class="pagination" 
+     th:if="${totalPages > 1 and !isSearching}">
+    
+    <!-- Tombol Prev -->
+    <div class="prev">
+        <a th:href="@{/pokemon/list(page=${currentPage == 0 ? totalPages - 1 : currentPage - 1})}">
+            <i class="fa-solid fa-chevron-left"></i> Prev
+        </a>
+    </div>
+
+    <ul>
+        <!-- Halaman pertama -->
+        <li th:if="${currentPage > 1}">
+            <a th:href="@{/pokemon/list(page=0)}" th:text="1"></a>
+        </li>
+
+        <!-- Titik 3 di awal -->
+        <li th:if="${currentPage > 2}">
+            <span>...</span>
+        </li>
+
+        <!-- Halaman saat ini -->
+        <li>
+            <a th:href="@{/pokemon/list(page=${currentPage})}"
+               th:text="${currentPage + 1}"
+               class="active"></a>
+        </li>
+
+        <!-- Halaman berikutnya -->
+        <li th:if="${currentPage + 1 < totalPages - 1}">
+            <a th:href="@{/pokemon/list(page=${currentPage + 1})}"
+               th:text="${currentPage + 2}"></a>
+        </li>
+
+        <!-- Titik 3 di akhir -->
+        <li th:if="${currentPage + 2 < totalPages - 1}">
+            <span>...</span>
+        </li>
+
+        <!-- Halaman terakhir -->
+        <li th:if="${currentPage < totalPages - 1}">
+            <a th:href="@{/pokemon/list(page=${totalPages - 1})}"
+               th:text="${totalPages}"></a>
+        </li>
+    </ul>
+
+    <!-- Tombol Next -->
+    <div class="next">
+        <a th:href="@{/pokemon/list(page=${currentPage == totalPages - 1 ? 0 : currentPage + 1})}">
+            Next <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+</div>
+
+
+
+</main>
+ 
+ 
+
+ <script th:src="@{/js/dashboard.js}"></script>
+
+</body>
+</html>

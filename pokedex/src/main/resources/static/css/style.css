@@ -1,0 +1,663 @@
+*{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+   overflow-x: hidden;
+   
+}
+body{
+    background-color: #FFC09B;
+   
+   
+    
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(Ketchum.otf);
+}
+@font-face {
+    font-family: myFonts;
+    src: url(Retro\ Pixel.otf);
+}
+
+
+
+.header{
+    display: flex;
+    width: 23%;
+    align-items: center;
+   padding: 8px 5px 8px 5px;
+      background: rgba(255, 255, 255, 0.1);       /* Translucent white */
+  backdrop-filter: blur(10px);                /* Blur behind the element */
+  -webkit-backdrop-filter: blur(10px);        /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);  /* Optional border */
+  border-radius: 16px;                         /* Rounded corners */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);   /* Soft shadow */
+    gap: 15px;
+  color: white;
+  margin: 10px 30px;
+    
+}
+.header .logo{
+    font-family: myFont;
+    font-size: 30px;
+}
+.header ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px;
+}
+.header ul li a{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+#herosection{
+   display: grid;
+   grid-template-columns: 1.5fr 0.5fr;
+   align-items: center;
+   justify-content: center;
+   grid-template-rows: 1fr 0.2fr ;
+  
+
+}
+#herosection .grid1 .text h2{
+    color: white;
+    font-family: myFont;
+    font-size: 9rem;
+}
+#herosection .grid1{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+   justify-content: center;
+}
+#herosection .grid1 .text h3{
+    color: white;
+    font-family: myFonts;
+    font-size: 9rem;
+}
+#herosection .grid1 .material {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+   
+    gap: 8px;
+}
+#herosection .grid1 .material .text2{
+    width: 250px;
+    
+}
+#herosection .grid1 .material .text2 h2{
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+}
+#herosection .grid1 .material .text2 p{
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+     border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  backdrop-filter: blur(10px); /* blur latar belakang */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  padding: 5px;
+}
+#herosection .grid1 .material .text2 .img9x{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding: 5px 0px ;
+}
+#herosection .grid1 .material .text2 .img9x img{
+    width: 100px;
+    filter: drop-shadow(0 5px 10px rgba(255, 254, 254, 0.955));
+     animation: bounce 5s ease infinite;
+       display: inline-block;
+       
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+}
+#container3d1 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    margin-top:0px;
+    z-index: 99999;
+    
+}
+
+#herosection .grid2{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5px 9%;
+   
+    gap: 5px;
+}
+#herosection .grid2 .text p{
+    text-align: center;
+    font-size: 12px;
+   color: rgba(128, 128, 128, 0.633);
+   
+}
+#herosection .grid2 .text  .buttontexts {
+    border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent */
+  backdrop-filter: blur(60px); /* blur latar belakang */
+  -webkit-backdrop-filter: blur(50px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-left: 20px;
+  padding: 5px 3px;
+  width: 200px;
+  
+}
+#herosection .grid2 .text  .buttontexts a{
+    color: white;
+}
+#herosection .grid2 .belltower{
+    background-color: rgba(77, 77, 87, 0.667);
+    width: 250px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#herosection .grid2 .belltower .img10x{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#herosection .grid2 .belltower .img10x img{
+    width: 100%;
+    
+}
+#herosection .grid1 .box .box-content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-content: center;
+    
+    gap: 10px;
+}
+#herosection .grid1 .box .heading{
+    font-size: 15px;
+    color: white;
+    padding: 10px 5px;
+}
+#herosection .grid1 .box .box-item{
+    background-color: white;
+    display: flex;
+    border-radius: 40px;
+    padding: 5px;
+    align-items: center;
+    gap: 10px;
+    
+}
+#herosection .grid1 .box .box-item .img11x{
+    width: 50px;
+    height: 50px;
+    background-color:#FFC09B ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#herosection .grid1 .box .box-item .img11x img{
+    width: 40px;
+    height: 40px;
+   
+    
+}
+#herosection .grid1 .box .box-item .item{
+
+    display: flex;
+   gap: 5px;
+    
+}
+#herosection .grid1 .box .box-item .item p{
+    text-align: center;
+    font-size: 10px;
+    color: gray;
+}
+#herosection .grid1 .box .box-item .item h2{
+    font-size: 10px;
+    color: rgb(177, 15, 15);
+    font-style: italic;
+}
+
+#herosection .grid1 .grids{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+#herosection .grid1 .box .box-item .box-text .elemen{
+    background-color: crimson;
+    color: white;
+    font-size: 8px;
+    padding: 3px 0px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+#herosection .grid1 .box .box-item .box-text .elemen2{
+    background-color: rgb(20, 130, 220);
+    color: white;
+    font-size: 8px;
+    padding: 3px 0px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+#herosection .grid1 .box .box-item .box-text .elemen3{
+    background-color: rgb(20, 220, 53);
+    color: white;
+    font-size: 8px;
+    padding: 3px 0px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+#herosection .grid1 .box{
+    margin-top: 100px;
+}
+#herosection .grid2 .lets a{
+    background-color: rgba(255, 255, 0, 0);
+    padding: 1px 30px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 10px;
+    color: rgb(0, 0, 0);
+}
+#herosection .grid2 .lets a:hover{
+    background-color: yellow;
+    padding: 1px 30px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    font-size: 10px;
+    color: rgb(0, 0, 0);
+}
+
+
+#banner2 {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    grid-template-areas: 
+    "adventure adventure gym towers towers"
+    "map map gym towers towers"
+    "map map pokeball towers towers"
+    "map map elite elite pokedex"
+    "celebi trio trio trio lugia"
+    ;
+   
+    padding: 8px;
+}
+#banner2 .adventure{
+    background-color: white;
+    color: rgb(40, 39, 39);
+    grid-area: adventure;
+    height: 120px;
+    border-radius: 15px;
+}
+#banner2 .adventure .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    
+}
+#banner2 .adventure .content h2{
+    font-size: 2.5rem;
+    font-family: myFont;
+    font-weight: 300;
+}
+
+#banner2 .adventure .content .image img{
+    width: 100px;
+}
+#banner2 .adventure h3{
+   
+  padding: 0px 20px;
+    font-size: 2.5rem;
+    font-family: myFont;
+    font-weight: 300;
+}
+#banner2 .gym{
+    background-color: white;
+    color: black;
+    grid-area: gym;
+     border-radius: 15px;
+     height: 170px;
+     padding: 10px 20px;
+     overflow: hidden;
+}
+#banner2 .gym .content{
+    display: flex;
+    justify-content: space-between;
+
+}
+#banner2 .gym .content .content-text{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: myFonts;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+#banner2 .gym .content .content-action{
+    color: gray;
+    font-size: 12px;
+}
+#banner2 .gym  .image{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px;
+}
+#banner2 .gym  .image img{
+    width: 150px;
+    
+}
+#banner2 .towers{
+    background-color: rgb(0, 0, 0);
+    color: rgb(221, 217, 217);
+    grid-area: towers;
+    border-radius: 15px;
+}
+#banner2 .towers img{
+    width: 100%;
+    height: 330px;
+    border-radius: 15px;
+}
+#banner2 .map{
+    background-color: #d5d9dc;
+    color: #9ea2a5;
+    grid-area: map;
+    border-radius: 15px;
+    height: auto;
+}
+#banner2 .map .content{
+    padding: 15px 10px;
+    display: flex;
+    grid-template-columns: 1fr;
+   justify-content: space-between;
+   flex-direction: column;
+   height: 370px;
+    
+}
+#banner2 .map .content .content-head{
+    font-size: 10px;
+    color: grey;
+    text-transform: uppercase;
+    font-family: myfonts;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    
+}
+
+#banner2 .map .content .image{
+    display: flex;
+    justify-content: center;
+
+}
+#banner2 .map .content .image img{
+    height: 270px;
+    width: 30%;
+    rotate: -6deg;
+    position:absolute ;
+    margin-top: -120px;
+    z-index: 0;
+}
+#banner2 .map .content .content-foot{
+    display: flex;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: end;
+   z-index: 5;
+}
+#banner2 .map .content .content-foot .foot{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+#banner2 .map .content .content-foot .foot .footbg{
+    background-color: rgb(135, 135, 143);
+    border-radius: 18px;
+    padding: 8px;
+    border: 1px solid white;
+    
+}
+#banner2 .map .content .content-foot .foot .footbg h2{
+    font-family: myFonts;
+    font-size: 13px;
+    color: white;
+}
+#banner2 .map .content .content-foot .image1{
+    display: flex;
+    justify-content: end;
+}
+#banner2 .map .content .content-foot .image1 img{
+    width: 90px;
+    border-radius: 10px;
+}
+#banner2 .pokeball{
+    background-color: rgb(28, 28, 28);
+    color: rgb(0, 0, 0);
+    grid-area: pokeball;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+     height: 140px;
+}
+#banner2 .pokeball img{
+    width: 70px;
+    animation: rotate 5s ease infinite,
+    drop 5s ease infinite
+    ;
+       display: inline-block;
+}
+#banner2 .elite{
+    background-color: #fdfdfd;
+     background-image: url('4.png');
+  background-size: cover;
+  background-position: center;
+    color: rgb(0, 0, 0);
+    grid-area: elite;
+    height: 180px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner2 .elite .content h2{
+    font-family: myFont;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+}
+@keyframes rotate{
+    0%, 10% ,20%, 30%,40%, 50%,60%,72%,78%{
+        rotate: 0deg;
+        filter: brightness(100%);
+    }
+    15%,55%{
+        rotate: -30deg;
+    }
+    35%{
+        rotate: 30deg;
+    }
+    75%{
+        filter: brightness(50%);
+    }
+}
+@keyframes drop{
+    0%{
+        transform: translateY(0%);
+    }
+     60%{
+        transform: translateY(20%);
+    }
+     90%{
+        transform: translateY(25%);
+    }
+     45%,75%,100%{
+        transform: translateY(26%);
+    }
+}
+
+
+#banner2 .pokedex{
+      background-color: rgb(28, 28, 28);
+    color: rgb(238, 222, 222);
+    grid-area: pokedex;
+    border-radius: 15px;
+}
+#banner2 .celebi{
+    background-color: rgb(101, 98, 98);
+    color: rgb(0, 0, 0);
+    grid-area: celebi;
+}
+#banner2 .trio{
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    grid-area: trio;
+    height: 230px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#banner2 .trio .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+#banner2 .trio .content .text{
+    font-size: 2rem;
+    font-family: myfonts;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+#banner2 .trio .content .raikou{
+  width: 200px;
+  height: 150px;
+   background: rgba(255, 255, 255, 0.2); /* white base with transparency */
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner2 .trio .content .image1 img{
+    width: 160px;
+    border-radius: 15px;
+    height: 110px;
+}
+#banner2 .trio .content .image1 img:hover{
+    scale: 0.75;
+    
+}
+/* #banner2 .trio  */
+#banner2 .lugia{
+    background-color: rgb(101, 98, 98);
+    color: rgb(0, 0, 0);
+    grid-area: lugia;
+}
+#container3d2 {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    margin-top:0px;
+    z-index: 99999;
+    
+}
+#banner2 .lugia{
+    border-radius: 15px;
+}
+#banner2  .lugia video {
+  width: 300px;    /* Atau pakai persen: 80% */
+  height: 100%;   
+  display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#banner2 .celebi{
+    background-color: #fdfdfd;
+     background-image: url('ilex.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 10px;
+}
+#banner2 .celebi .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 180px;
+}
+#banner2 .celebi .content .text{
+    color: white;
+    font-size: 30px;
+    font-family: myfont;
+    gap: 8px;
+}
+#banner2 .celebi .content img{
+    width: 170px;
+    animation: mengambang 3s ease-in-out infinite;
+}
+@keyframes mengambang {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#banner3{
+    background-color: #fdfdfd;
+     background-image: url('sky.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  padding: 10px;
+  height: 90vh;
+}

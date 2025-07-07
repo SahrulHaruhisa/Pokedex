@@ -1,0 +1,575 @@
+{
+  "mega": [
+    {
+      "base_name": "venusaur",
+      "mega1": {
+        "name": "venusaur mega",
+        "type1": "grass",
+        "type2": "poison",
+        "image_url": "https://img.pokemondb.net/artwork/large/venusaur-mega.jpg"
+      }
+    },
+    {
+      "base_name": "charizard",
+      "mega1": {
+        "name": "charizard mega x",
+        "type1": "fire",
+        "type2": "dragon",
+        "image_url": "https://img.pokemondb.net/artwork/large/charizard-mega-x.jpg"
+      },
+      "mega2": {
+        "name": "charizard mega y",
+        "type1": "fire",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/charizard-mega-y.jpg"
+      }
+    },
+    {
+      "base_name": "blastoise",
+      "mega1": {
+        "name": "blastoise mega",
+        "type1": "water",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/blastoise-mega.jpg"
+      }
+    },
+    {
+      "base_name": "beedrill",
+      "mega1": {
+        "name": "beedrill mega",
+        "type1": "bug",
+        "type2": "poison",
+        "image_url": "https://img.pokemondb.net/artwork/large/beedrill-mega.jpg"
+      }
+    },
+    {
+      "base_name": "pidgeot",
+      "mega1": {
+        "name": "pidgeot mega",
+        "type1": "normal",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/pidgeot-mega.jpg"
+      }
+    },
+    {
+      "base_name": "alakazam",
+      "mega1": {
+        "name": "alakazam mega",
+        "type1": "psychic",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/alakazam-mega.jpg"
+      }
+    },
+    {
+      "base_name": "slowbro",
+      "mega1": {
+        "name": "slowbro mega",
+        "type1": "water",
+        "type2": "psychic",
+        "image_url": "https://img.pokemondb.net/artwork/large/slowbro-mega.jpg"
+      }
+    },
+    {
+      "base_name": "gengar",
+      "mega1": {
+        "name": "gengar mega",
+        "type1": "ghost",
+        "type2": "poison",
+        "image_url": "https://img.pokemondb.net/artwork/large/gengar-mega.jpg"
+      }
+    },
+    {
+      "base_name": "kangaskhan",
+      "mega1": {
+        "name": "kangaskhan mega",
+        "type1": "normal",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/kangaskhan-mega.jpg"
+      }
+    },
+    {
+      "base_name": "pinsir",
+      "mega1": {
+        "name": "pinsir mega",
+        "type1": "bug",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/pinsir-mega.jpg"
+      }
+    },
+    {
+      "base_name": "gyarados",
+      "mega1": {
+        "name": "gyarados mega",
+        "type1": "water",
+        "type2": "dark",
+        "image_url": "https://img.pokemondb.net/artwork/large/gyarados-mega.jpg"
+      }
+    },
+    {
+      "base_name": "aerodactyl",
+      "mega1": {
+        "name": "aerodactyl mega",
+        "type1": "rock",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/aerodactyl-mega.jpg"
+      }
+    },
+    {
+      "base_name": "mewtwo",
+      "mega1": {
+        "name": "mewtwo mega x",
+        "type1": "psychic",
+        "type2": "fighting",
+        "image_url": "https://img.pokemondb.net/artwork/large/mewtwo-mega-x.jpg"
+      },
+      "mega2": {
+        "name": "mewtwo mega y",
+        "type1": "psychic",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/mewtwo-mega-y.jpg"
+      }
+    },
+    {
+      "base_name": "ampharos",
+      "mega1": {
+        "name": "ampharos mega",
+        "type1": "electric",
+        "type2": "dragon",
+        "image_url": "https://img.pokemondb.net/artwork/large/ampharos-mega.jpg"
+      }
+    },
+    {
+      "base_name": "scizor",
+      "mega1": {
+        "name": "scizor mega",
+        "type1": "bug",
+        "type2": "steel",
+        "image_url": "https://img.pokemondb.net/artwork/large/scizor-mega.jpg"
+      }
+    },
+    {
+      "base_name": "heracross",
+      "mega1": {
+        "name": "heracross mega",
+        "type1": "bug",
+        "type2": "fighting",
+        "image_url": "https://img.pokemondb.net/artwork/large/heracross-mega.jpg"
+      }
+    },
+    {
+      "base_name": "houndoom",
+      "mega1": {
+        "name": "houndoom mega",
+        "type1": "dark",
+        "type2": "fire",
+        "image_url": "https://img.pokemondb.net/artwork/large/houndoom-mega.jpg"
+      }
+    },
+    {
+      "base_name": "tyranitar",
+      "mega1": {
+        "name": "tyranitar mega",
+        "type1": "rock",
+        "type2": "dark",
+        "image_url": "https://img.pokemondb.net/artwork/large/tyranitar-mega.jpg"
+      }
+    },
+    {
+      "base_name": "blaziken",
+      "mega1": {
+        "name": "blaziken mega",
+        "type1": "fire",
+        "type2": "fighting",
+        "image_url": "https://img.pokemondb.net/artwork/large/blaziken-mega.jpg"
+      }
+    },
+    {
+      "base_name": "gardevoir",
+      "mega1": {
+        "name": "gardevoir mega",
+        "type1": "psychic",
+        "type2": "fairy",
+        "image_url": "https://img.pokemondb.net/artwork/large/gardevoir-mega.jpg"
+      }
+    },
+    {
+      "base_name": "mawile",
+      "mega1": {
+        "name": "mawile mega",
+        "type1": "steel",
+        "type2": "fairy",
+        "image_url": "https://img.pokemondb.net/artwork/large/mawile-mega.jpg"
+      }
+    },
+    {
+      "base_name": "aggron",
+      "mega1": {
+        "name": "aggron mega",
+        "type1": "steel",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/aggron-mega.jpg"
+      }
+    },
+    {
+      "base_name": "medicham",
+      "mega1": {
+        "name": "medicham mega",
+        "type1": "fighting",
+        "type2": "psychic",
+        "image_url": "https://img.pokemondb.net/artwork/large/medicham-mega.jpg"
+      }
+    },
+    {
+      "base_name": "manectric",
+      "mega1": {
+        "name": "manectric mega",
+        "type1": "electric",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/manectric-mega.jpg"
+      }
+    },
+    {
+      "base_name": "banette",
+      "mega1": {
+        "name": "banette mega",
+        "type1": "ghost",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/banette-mega.jpg"
+      }
+    },
+    {
+      "base_name": "absol",
+      "mega1": {
+        "name": "absol mega",
+        "type1": "dark",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/absol-mega.jpg"
+      }
+    },
+    {
+      "base_name": "garchomp",
+      "mega1": {
+        "name": "garchomp mega",
+        "type1": "dragon",
+        "type2": "ground",
+        "image_url": "https://img.pokemondb.net/artwork/large/garchomp-mega.jpg"
+      }
+    },
+    {
+      "base_name": "lucario",
+      "mega1": {
+        "name": "lucario mega",
+        "type1": "fighting",
+        "type2": "steel",
+        "image_url": "https://img.pokemondb.net/artwork/large/lucario-mega.jpg"
+      }
+    },
+    {
+      "base_name": "abomasnow",
+      "mega1": {
+        "name": "abomasnow mega",
+        "type1": "grass",
+        "type2": "ice",
+        "image_url": "https://img.pokemondb.net/artwork/large/abomasnow-mega.jpg"
+      }
+    },
+    {
+      "base_name": "gallade",
+      "mega1": {
+        "name": "gallade mega",
+        "type1": "psychic",
+        "type2": "fighting",
+        "image_url": "https://img.pokemondb.net/artwork/large/gallade-mega.jpg"
+      }
+    },
+    {
+      "base_name": "audino",
+      "mega1": {
+        "name": "audino mega",
+        "type1": "normal",
+        "type2": "fairy",
+        "image_url": "https://img.pokemondb.net/artwork/large/audino-mega.jpg"
+      }
+    },
+    {
+      "base_name": "diancie",
+      "mega1": {
+        "name": "diancie mega",
+        "type1": "rock",
+        "type2": "fairy",
+        "image_url": "https://img.pokemondb.net/artwork/large/diancie-mega.jpg"
+      }
+    },
+    {
+      "base_name": "latias",
+      "mega1": {
+        "name": "latias mega",
+        "type1": "dragon",
+        "type2": "psychic",
+        "image_url": "https://img.pokemondb.net/artwork/large/latias-mega.jpg"
+      }
+    },
+    {
+      "base_name": "latios",
+      "mega1": {
+        "name": "latios mega",
+        "type1": "dragon",
+        "type2": "psychic",
+        "image_url": "https://img.pokemondb.net/artwork/large/latios-mega.jpg"
+      }
+    },
+    {
+      "base_name": "rayquaza",
+      "mega1": {
+        "name": "rayquaza mega",
+        "type1": "dragon",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/rayquaza-mega.jpg"
+      }
+    },
+    {
+      "base_name": "lopunny",
+      "mega1": {
+        "name": "lopunny mega",
+        "type1": "normal",
+        "type2": "fighting",
+        "image_url": "https://img.pokemondb.net/artwork/large/lopunny-mega.jpg"
+      }
+    },
+    {
+      "base_name": "altaria",
+      "mega1": {
+        "name": "altaria mega",
+        "type1": "dragon",
+        "type2": "fairy",
+        "image_url": "https://img.pokemondb.net/artwork/large/altaria-mega.jpg"
+      }
+    },
+    {
+      "base_name": "salamence",
+      "mega1": {
+        "name": "salamence mega",
+        "type1": "dragon",
+        "type2": "flying",
+        "image_url": "https://img.pokemondb.net/artwork/large/salamence-mega.jpg"
+      }
+    },
+    {
+      "base_name": "metagross",
+      "mega1": {
+        "name": "metagross mega",
+        "type1": "steel",
+        "type2": "psychic",
+        "image_url": "https://img.pokemondb.net/artwork/large/metagross-mega.jpg"
+      }
+    },
+    {
+      "base_name": "sharpedo",
+      "mega1": {
+        "name": "sharpedo mega",
+        "type1": "water",
+        "type2": "dark",
+        "image_url": "https://img.pokemondb.net/artwork/large/sharpedo-mega.jpg"
+      }
+    },
+    {
+      "base_name": "camerupt",
+      "mega1": {
+        "name": "camerupt mega",
+        "type1": "fire",
+        "type2": "ground",
+        "image_url": "https://img.pokemondb.net/artwork/large/camerupt-mega.jpg"
+      }
+    },
+    {
+      "base_name": "sableyes",
+      "mega1": {
+        "name": "sableye mega",
+        "type1": "dark",
+        "type2": "ghost",
+        "image_url": "https://img.pokemondb.net/artwork/large/sableye-mega.jpg"
+      }
+    },
+    {
+      "base_name": "steelix",
+      "mega1": {
+        "name": "steelix mega",
+        "type1": "steel",
+        "type2": "ground",
+        "image_url": "https://img.pokemondb.net/artwork/large/steelix-mega.jpg"
+      }
+    },
+    {
+      "base_name": "glalie",
+      "mega1": {
+        "name": "glalie mega",
+        "type1": "ice",
+        "type2": null,
+        "image_url": "https://img.pokemondb.net/artwork/large/glalie-mega.jpg"
+      }
+    }
+  ],
+  "gigantamax": [
+    {
+      "base_name": "charizard",
+      "name": "charizard gmax",
+      "type1": "fire",
+      "type2": "flying",
+      "image_url": "https://img.pokemondb.net/artwork/large/charizard-gigantamax.jpg"
+    },
+    {
+      "base_name": "butterfree",
+      "name": "butterfree gmax",
+      "type1": "bug",
+      "type2": "flying",
+      "image_url": "https://img.pokemondb.net/artwork/large/butterfree-gigantamax.jpg"
+    },
+    {
+      "base_name": "meowth",
+      "name": "meowth gmax",
+      "type1": "normal",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/meowth-gigantamax.jpg"
+    },
+    {
+      "base_name": "machamp",
+      "name": "machamp gmax",
+      "type1": "fighting",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/machamp-gigantamax.jpg"
+    },
+    {
+      "base_name": "gengar",
+      "name": "gengar gmax",
+      "type1": "ghost",
+      "type2": "poison",
+      "image_url": "https://img.pokemondb.net/artwork/large/gengar-gigantamax.jpg"
+    },
+    {
+      "base_name": "garbodor",
+      "name": "garbodor gmax",
+      "type1": "poison",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/garbodor-gmax.jpg"
+    },
+    {
+      "base_name": "melmetal",
+      "name": "melmetal gmax",
+      "type1": "steel",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/melmetal-gmax.jpg"
+    },
+    {
+      "base_name": "corviknight",
+      "name": "corviknight gmax",
+      "type1": "flying",
+      "type2": "steel",
+      "image_url": "https://img.pokemondb.net/artwork/large/corviknight-gmax.jpg"
+    },
+    {
+      "base_name": "orbeetle",
+      "name": "orbeetle gmax",
+      "type1": "bug",
+      "type2": "psychic",
+      "image_url": "https://img.pokemondb.net/artwork/large/orbeetle-gmax.jpg"
+    },
+    {
+      "base_name": "drednaw",
+      "name": "drednaw gmax",
+      "type1": "water",
+      "type2": "rock",
+      "image_url": "https://img.pokemondb.net/artwork/large/drednaw-gmax.jpg"
+    },
+    {
+      "base_name": "coalossal",
+      "name": "coalossal gmax",
+      "type1": "rock",
+      "type2": "fire",
+      "image_url": "https://img.pokemondb.net/artwork/large/coalossal-gmax.jpg"
+    },
+    {
+      "base_name": "flapple",
+      "name": "flapple gmax",
+      "type1": "grass",
+      "type2": "dragon",
+      "image_url": "https://img.pokemondb.net/artwork/large/flapple-gmax.jpg"
+    },
+    {
+      "base_name": "appletun",
+      "name": "appletun gmax",
+      "type1": "grass",
+      "type2": "dragon",
+      "image_url": "https://img.pokemondb.net/artwork/large/appletun-gmax.jpg"
+    },
+    {
+      "base_name": "sandaconda",
+      "name": "sandaconda gmax",
+      "type1": "ground",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/sandaconda-gmax.jpg"
+    },
+    {
+      "base_name": "toxtricity",
+      "name": "toxtricity gmax",
+      "type1": "electric",
+      "type2": "poison",
+      "image_url": "https://img.pokemondb.net/artwork/large/toxtricity-gmax.jpg"
+    },
+    {
+      "base_name": "centiskorch",
+      "name": "centiskorch gmax",
+      "type1": "fire",
+      "type2": "bug",
+      "image_url": "https://img.pokemondb.net/artwork/large/centiskorch-gmax.jpg"
+    },
+    {
+      "base_name": "hatterene",
+      "name": "hatterene gmax",
+      "type1": "psychic",
+      "type2": "fairy",
+      "image_url": "https://img.pokemondb.net/artwork/large/hatterene-gmax.jpg"
+    },
+    {
+      "base_name": "grimmsnarl",
+      "name": "grimmsnarl gmax",
+      "type1": "dark",
+      "type2": "fairy",
+      "image_url": "https://img.pokemondb.net/artwork/large/grimmsnarl-gmax.jpg"
+    },
+    {
+      "base_name": "alcremie",
+      "name": "alcremie gmax",
+      "type1": "fairy",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/alcremie-gmax.jpg"
+    },
+    {
+      "base_name": "copperajah",
+      "name": "copperajah gmax",
+      "type1": "steel",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/copperajah-gmax.jpg"
+    },
+    {
+      "base_name": "duraludon",
+      "name": "duraludon gmax",
+      "type1": "steel",
+      "type2": "dragon",
+      "image_url": "https://img.pokemondb.net/artwork/large/duraludon-gmax.jpg"
+    },
+    {
+      "base_name": "eevee",
+      "name": "eevee gmax",
+      "type1": "normal",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/eevee-gmax.jpg"
+    },
+    {
+      "base_name": "pikachu",
+      "name": "pikachu gmax",
+      "type1": "electric",
+      "type2": null,
+      "image_url": "https://img.pokemondb.net/artwork/large/pikachu-gigantamax.jpg"
+    }
+  ]
+}

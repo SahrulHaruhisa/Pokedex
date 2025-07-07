@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" th:href="@{/css/pokemon.css}" />
+  <style>
+    .modal-show.active {
+  display: block; /* tampilkan modal */
+}
+.img-bg{
+  background-color: black;
+}
+
+
+  </style>
+  <title>Item Grid</title>
+</head>
+<body>
+  <header class="header">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a th:href="@{/pokemon/grid}">Pokedex</a></li>
+      <li><a th:href="@{/items/gridz}">Items</a></li>
+      <li><a th:href="@{/pokemon/list}">Lab</a></li>
+    </ul>
+    <div class="logos">
+      <img th:src="@{/img/logos.png}" alt="Logo" />
+    </div>
+    <button id="toggleTheme" aria-label="Toggle Dark Mode">
+            <i id="themeIcon" class="fas fa-sun"></i>
+        </button>
+  </header>
+
+  <main class="container">
+    <nav class="nav">
+      <form action="/items/gridz" method="get">
+        <button class="button" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" name="keyword" placeholder="Search items..." th:value="${keyword != null ? keyword : ''}" />
+
+        <select name="category" onchange="this.form.submit()">
+          <option value="">All Categories</option>
+          <option th:each="cat : ${categoryList}" 
+                  th:value="${cat}" 
+                  th:text="${cat}" 
+                  th:selected="${cat == selectedCategory}">
+          </option>
+        </select>
+      </form>
+    </nav>
+  </main>
+
+  <div class="poke">
+    <section class="poke-bg">
+      <article class="poke-grid">
+  <figure class="poke-box" th:each="item : ${itemPage.content}" th:attr="data-id=${item.id}">
+          <div class="img10x">
+            <img th:src="@{'/images/' + ${item.picture}}" 
+                 th:alt="${item.name_item}" 
+                 class="zoom-image" 
+                 onerror="this.src='/images/default.png'" />
+          </div>
+          <div class="content">
+            <p th:text="${item.name_item}">Item Name</p>
+          </div>
+        </figure>
+      </article>
+
+      <div class="pagination">
+        <div class="prev">
+          <a th:href="@{/items/gridz(page=${currentPage == 0 ? totalPages - 1 : currentPage - 1}, keyword=${keyword}, category=${selectedCategory})}">
+            <i class="fa-solid fa-chevron-left"></i> Prev
+          </a>
+        </div>
+        <ul>
+          <li th:if="${currentPage > 1}">
+            <a th:href="@{/items/gridz(page=0, keyword=${keyword}, category=${selectedCategory})}" th:text="1"></a>
+          </li>
+          <li th:if="${currentPage > 2}"><span>...</span></li>
+          <li>
+            <a th:href="@{/items/gridz(page=${currentPage}, keyword=${keyword}, category=${selectedCategory})}"
+               th:text="${currentPage + 1}" class="active"></a>
+          </li>
+          <li th:if="${currentPage + 1 < totalPages - 1}">
+            <a th:href="@{/items/gridz(page=${currentPage + 1}, keyword=${keyword}, category=${selectedCategory})}"
+               th:text="${currentPage + 2}"></a>
+          </li>
+          <li th:if="${currentPage + 2 < totalPages - 1}"><span>...</span></li>
+          <li th:if="${currentPage < totalPages - 1}">
+            <a th:href="@{/items/gridz(page=${totalPages - 1}, keyword=${keyword}, category=${selectedCategory})}"
+               th:text="${totalPages}"></a>
+          </li>
+        </ul>
+        <div class="next">
+          <a th:href="@{/items/gridz(page=${currentPage == totalPages - 1 ? 0 : currentPage + 1}, keyword=${keyword}, category=${selectedCategory})}">
+            Next <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- MODAL DETAIL ITEM -->
+<div class="modal-show">
+  <div class="modal-container">
+    <header class="heading">
+      <div class="img-bg">
+                      
+                </div>
+      <div class="name">
+        <p>#0000</p>
+        <h2>Item Name</h2>
+        <button><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </header>
+    <figure class="img11x">
+      <img src="/images/default.png" alt="">
+    </figure>
+    <div class="detail">
+      <p class="category">Category: </p>
+      <p class="effect">Effect: </p>
+      <p class="attributes">Attributes: </p>
+      <p class="flingPower">Fling Power: </p>
+    </div>
+  </div>
+</div>
+<script th:src="@{/js/pokemon.js}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".poke-box");
+  const modal = document.querySelector(".modal-show");
+
+  boxes.forEach(box => {
+    box.addEventListener("click", async () => {
+      const id = box.getAttribute("data-id");
+      if (!id) return;
+
+      try {
+        const res = await fetch(`/items/api/${id}`); // pastikan endpoint ini tersedia
+        const data = await res.json();
+
+        // Isi modal
+        document.querySelector(".modal-container .name p").textContent = `#${String(data.id).padStart(4, "0")}`;
+        document.querySelector(".modal-container .name h2").textContent = data.name_item;
+        document.querySelector(".modal-container .img11x img").src = `/images/${data.picture}`;
+
+        // Kategori
+        const categoryEl = document.querySelector(".modal-container .category");
+        if (categoryEl) categoryEl.textContent = `Category: ${data.category || "-"}`;
+
+        // Efek (description)
+        const effectEl = document.querySelector(".modal-container .effect");
+        if (effectEl) effectEl.textContent = `Effect: ${data.effect || "No description available."}`;
+
+        // Attributes
+        const attrEl = document.querySelector(".modal-container .attributes");
+        if (attrEl) attrEl.textContent = `Attributes: ${data.attributes || "-"}`;
+
+        // Fling Power
+        const flingEl = document.querySelector(".modal-container .flingPower");
+        if (flingEl) flingEl.textContent = `Fling Power: ${data.flingPower ?? "-"}`;
+
+        modal.classList.add("active");
+      } catch (err) {
+        console.error("Gagal ambil data item:", err);
+      }
+    });
+  });
+
+  // Tombol close
+  document.querySelector(".modal-container button").addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+});
+</script>
+
+
+</body>
+</html>

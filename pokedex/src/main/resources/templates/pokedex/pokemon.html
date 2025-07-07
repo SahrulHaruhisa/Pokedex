@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/pokemon.css}">
+    <style> 
+        .type1 {
+  padding: 6px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  width: fit-content;
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px;
+}
+.img-bg.water    { background-color: #13518f; }
+.img-bg.fire     { background-color: #912323; }
+.img-bg.grass    { background-color: #15ac15; }
+.img-bg.electric { background-color: #978025; }
+.img-bg.ice      { background-color: #258c8c; }
+.img-bg.fighting { background-color: #852505; }
+.img-bg.poison   { background-color: #4b1e61; }
+.img-bg.ground   { background-color: #59432d; }
+.img-bg.flying   { background-color: #1d2c4b; }
+.img-bg.psychic  { background-color: #582146; }
+.img-bg.bug      { background-color: #5b7822; }
+.img-bg.rock     { background-color: #52361a; }
+.img-bg.ghost    { background-color: #39396d; }
+.img-bg.dark     { background-color: #0e0e0e; }
+.img-bg.steel    { background-color: #747373; }
+.img-bg.dragon   { background-color: #38036e; }
+.img-bg.fairy    { background-color: #583747; }
+.img-bg.normal   { background-color: #a3a2a2; }
+
+.typeke1.water    { background-color: #3399ff; }
+.typeke1.fire     { background-color: #ff4d4d; }
+.typeke1.grass    { background-color: #66cc66; }
+.typeke1.electric { background-color: #ffcc00; }
+.typeke1.ice      { background-color: #66ffff; }
+.typeke1.fighting { background-color: #cc3300; }
+.typeke1.poison   { background-color: #9933cc; }
+.typeke1.ground   { background-color: #cc9966; }
+.typeke1.flying   { background-color: #6699ff; }
+.typeke1.psychic  { background-color: #ff66cc; }
+.typeke1.bug      { background-color: #99cc33; }
+.typeke1.rock     { background-color: #996633; }
+.typeke1.ghost    { background-color: #6666cc; }
+.typeke1.dark     { background-color: #333333; }
+.typeke1.steel    { background-color: #999999; }
+.typeke1.dragon   { background-color: #6600cc; }
+.typeke1.fairy    { background-color: #ff99cc; }
+.typeke1.normal   { background-color: #cccccc; }
+
+.type1.water    { background-color: #3399ff; }
+.type1.fire     { background-color: #ff4d4d; }
+.type1.grass    { background-color: #66cc66; }
+.type1.electric { background-color: #ffcc00; }
+.type1.ice      { background-color: #66ffff; }
+.type1.fighting { background-color: #cc3300; }
+.type1.poison   { background-color: #9933cc; }
+.type1.ground   { background-color: #cc9966; }
+.type1.flying   { background-color: #6699ff; }
+.type1.psychic  { background-color: #ff66cc; }
+.type1.bug      { background-color: #99cc33; }
+.type1.rock     { background-color: #996633; }
+.type1.ghost    { background-color: #6666cc; }
+.type1.dark     { background-color: #333333; }
+.type1.steel    { background-color: #999999; }
+.type1.dragon   { background-color: #6600cc; }
+.type1.fairy    { background-color: #ff99cc; }
+.type1.normal   { background-color: #cccccc; }
+.typeke1.water    { background-color: #3399ff; }
+.typeke1.fire     { background-color: #ff4d4d; }
+.typeke1.grass    { background-color: #66cc66; }
+.typeke1.electric { background-color: #ffcc00; }
+.typeke1.ice      { background-color: #66ffff; }
+.typeke1.fighting { background-color: #cc3300; }
+.typeke1.poison   { background-color: #9933cc; }
+.typeke1.ground   { background-color: #cc9966; }
+.typeke1.flying   { background-color: #6699ff; }
+.typeke1.psychic  { background-color: #ff66cc; }
+.typeke1.bug      { background-color: #99cc33; }
+.typeke1.rock     { background-color: #996633; }
+.typeke1.ghost    { background-color: #6666cc; }
+.typeke1.dark     { background-color: #333333; }
+.typeke1.steel    { background-color: #999999; }
+.typeke1.dragon   { background-color: #6600cc; }
+.typeke1.fairy    { background-color: #ff99cc; }
+.typeke1.normal   { background-color: #cccccc; }
+
+.types-ke1{
+    width: 20px;
+    overflow: hidden;
+    color: white;
+    border-radius: 50%;
+    height: 20px;
+    padding: 5px;
+}
+.types-ke1.normal {
+  background-color: #A8A77A;
+}
+.types-ke1.fire {
+  background-color: #EE8130;
+}
+.types-ke1.water {
+  background-color: #6390F0;
+}
+.types-ke1.electric {
+  background-color: #F7D02C;
+}
+.types-ke1.grass {
+  background-color: #7AC74C;
+}
+.types-ke1.ice {
+  background-color: #96D9D6;
+}
+.types-ke1.fighting {
+  background-color: #C22E28;
+}
+.types-ke1.poison {
+  background-color: #A33EA1;
+}
+.types-ke1.ground {
+  background-color: #E2BF65;
+}
+.types-ke1.flying {
+  background-color: #A98FF3;
+}
+.types-ke1.psychic {
+  background-color: #F95587;
+}
+.types-ke1.bug {
+  background-color: #A6B91A;
+}
+.types-ke1.rock {
+  background-color: #B6A136;
+}
+.types-ke1.ghost {
+  background-color: #735797;
+}
+.types-ke1.dragon {
+  background-color: #6F35FC;
+}
+.types-ke1.dark {
+  background-color: #705746;
+}
+.types-ke1.steel {
+  background-color: #B7B7CE;
+}
+.types-ke1.fairy {
+  background-color: #D685AD;
+}
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a th:href="@{/pokemon/list}">Pokedex</a></li>
+            <li><a th:href="@{/items/gridz}">Items</a></li>
+            <li><a href="">Lab</a></li>
+        </ul>
+        <div class="logos">
+              <img th:src="@{/img/logos.png}">
+        </div>
+        <button id="toggleTheme" aria-label="Toggle Dark Mode">
+            <i id="themeIcon" class="fas fa-sun"></i>
+        </button>
+    </header>
+<main class="container">
+    <nav class="nav">
+        <form action="/pokemon/grid" method="get">
+    <button class="button" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <input type="search" name="keyword" placeholder="Search Pokemon in here" th:value="${keyword}">
+</form>
+        <div class="filter">
+            <a href="">Filter by Types</a>
+        </div>
+    </nav>
+   
+</main>
+<div class="poke">
+ <section class="poke-bg">
+        <article class="poke-grid">
+            
+         <figure class="poke-box" 
+        th:each="poke : ${pokemonPage.content}" 
+        th:attr="data-id=${poke.id}">
+    <div class="img10x">
+        <img th:src="${poke.imageUrl}" th:alt="${poke.name}" class="zoom-image">
+    </div>
+    <div class="content">
+        <p th:text="${poke.name}">Nama</p>
+    </div>
+</figure>
+        </article>
+           <div class="pagination">
+    <!-- Tombol Prev selalu ada -->
+    <div class="prev">
+        <a th:href="@{/pokemon/grid(page=${currentPage == 0 ? totalPages - 1 : currentPage - 1})}">
+            <i class="fa-solid fa-chevron-left"></i> Prev
+        </a>
+    </div>
+
+    <ul>
+        <!-- Halaman pertama selalu -->
+        <li th:if="${currentPage > 1}">
+            <a th:href="@{/pokemon/grid(page=0)}" th:text="1"></a>
+        </li>
+
+        <!-- ... jika lompat lebih dari 2 halaman dari halaman awal -->
+        <li th:if="${currentPage > 2}">
+            <span>...</span>
+        </li>
+
+        <!-- Halaman saat ini -->
+        <li>
+            <a th:href="@{/pokemon/grid(page=${currentPage})}"
+               th:text="${currentPage + 1}"
+               class="active"></a>
+        </li>
+
+        <!-- Halaman berikutnya jika bukan terakhir -->
+        <li th:if="${currentPage + 1 < totalPages - 1}">
+            <a th:href="@{/pokemon/grid(page=${currentPage + 1})}"
+               th:text="${currentPage + 2}"></a>
+        </li>
+
+        <!-- ... jika ada jarak ke halaman terakhir -->
+        <li th:if="${currentPage + 2 < totalPages - 1}">
+            <span>...</span>
+        </li>
+
+        <!-- Halaman terakhir jika belum tampil -->
+        <li th:if="${currentPage < totalPages - 1}">
+            <a th:href="@{/pokemon/grid(page=${totalPages - 1})}"
+               th:text="${totalPages}"></a>
+        </li>
+    </ul>
+
+    <!-- Tombol Next -->
+    <div class="next">
+        <a th:href="@{/pokemon/grid(page=${currentPage == totalPages - 1 ? 0 : currentPage + 1})}">
+            Next <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </div>
+</div>
+
+    </section>
+    </div>
+    <div class="modal-show">
+        <div class="modal-container">
+            <header class="heading">
+                <div class="img-bg">
+                        <img th:src="@{/img/ball.png}">
+                </div>
+                <div class="name">
+                     <p>#0111</p>
+                  <h2>Greninja</h2>
+                  <div class="icon">
+                    <div class="typeke1">
+                        <img src="water.png" alt="" srcset="">
+                    </div>
+                     <div class="typeke1">
+                        <img src="water.png" alt="" srcset="">
+                    </div>
+                  </div>
+                </div>
+               
+                <button><i class="fa-solid fa-xmark"></i></button>
+            </header>
+            <figure class="img11x">
+                <img src="greninja.png" alt="" srcset="">
+            </figure>
+            <figure class="evolution">
+                <div class="element">
+                    <div class="type1">
+                        <div class="typeimg">
+                            <img src="water.png" alt="">
+                        </div>
+                        <p>Water</p>
+                    </div>
+                    <div class="type1">
+                        <div class="typeimg">
+                            <img src="water.png" alt="">
+                        </div>
+                        <p>Water</p>
+                    </div>
+                </div>
+                <figure class="evolution-chain">
+                    <div class="evol"><h1>Evolution-chain</h1></div>
+                    <div class="chain">
+                        <div class="ev1">
+                            <img src="greninja.png" alt="" srcset="">
+                            <h2>Froakie</h2>
+                        </div>
+                        <p></p>
+                         <div class="ev1">
+                            <img src="greninja.png" alt="" srcset="">
+                            <h2>Froakie</h2>
+                        </div>
+                        <p></p>
+                         <div class="ev1">
+                            <img src="greninja.png" alt="" srcset="">
+                            <h2>Froakie</h2>
+                        </div>
+                    </div>
+                </figure>
+            <figure class="spesial-evolution">
+                    <div class="evol"><h1>Spesial  evolution</h1></div>
+                   
+                    <div class="chain">
+                         <figure class="chain-flex">
+                         <div class="ev1">
+                            <div class="img30px">
+                            <img src="greninja.png" alt="" srcset="">
+                            </div>
+                            <div class="type-spesial">
+                                <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                </div>
+                                  <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                  </div>
+                            </div>
+                            <h2>Froakie</h2>
+                            
+                        </div>
+                        
+                       
+                          <div class="ev1">
+                            <div class="img30px">
+                            <img src="greninja.png" alt="" srcset="">
+                            </div>
+                            <div class="type-spesial">
+                                <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                </div>
+                                  <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                  </div>
+                            </div>
+                            <h2>Froakie</h2>
+                            
+                        </div>
+                        
+                          <div class="ev1">
+                            <div class="img30px">
+                            <img src="greninja.png" alt="" srcset="">
+                            </div>
+                            <div class="type-spesial">
+                                <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                </div>
+                                  <div class="types-ke1">
+                                    <img src="water.png" alt="" srcset="">
+                                  </div>
+                            </div>
+                            <h2>Froakie</h2>
+                            
+                        </div>
+                        
+                           </figure>
+                    </div>
+                 
+                </figure>
+            </figure>
+        </div>
+    </div>
+    <script th:src="@{/js/pokemon.js}"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".poke-box");
+  const modal = document.querySelector(".modal-show");
+
+  boxes.forEach(box => {
+    box.addEventListener("click", async () => {
+      const id = box.getAttribute("data-id");
+      if (!id) return;
+
+      try {
+        const res = await fetch(`/pokemon/detail/${id}`);
+        const data = await res.json();
+
+        // === Header Info ===
+        document.querySelector(".modal-container .name p").textContent = `#${String(data.dexNumber).padStart(4, "0")}`;
+        document.querySelector(".modal-container .name h2").textContent = data.name;
+        document.querySelector(".modal-container .img11x img").src = data.imageUrl;
+
+        // === Type Icon (Kecil)
+        const icon = document.querySelector(".modal-container .icon");
+        icon.innerHTML = `
+          <div class="typeke1 ${data.type1}"><img src="/imgs/types/${data.type1}.png" alt="${data.type1}"></div>
+          ${data.type2 ? `<div class="typeke1 ${data.type2}"><img src="/imgs/types/${data.type2}.png" alt="${data.type2}"></div>` : ""}
+        `;
+
+        // === Background
+        const imgBg = document.querySelector(".modal-container .img-bg");
+        imgBg.className = "img-bg " + data.type1;
+
+        // === Type Element (Bawah Gambar)
+        const elementContainer = document.querySelector(".modal-container .element");
+        elementContainer.innerHTML = `
+          <div class="type1 ${data.type1}">
+            <div class="typeimg"><img src="/imgs/types/${data.type1}.png" alt="${data.type1}"></div>
+            <p>${data.type1}</p>
+          </div>
+          ${data.type2 ? `
+          <div class="type1 ${data.type2}">
+            <div class="typeimg"><img src="/imgs/types/${data.type2}.png" alt="${data.type2}"></div>
+            <p>${data.type2}</p>
+          </div>` : ""}
+        `;
+
+        // === Regular Evolution Chain
+        const chain = document.querySelector(".modal-container .evolution-chain .chain");
+        chain.innerHTML = "";
+
+        if (data.evolution1) {
+          chain.innerHTML += `<div class="ev1"><img src="${data.evolution1Image}" /><h2>${data.evolution1}</h2></div>`;
+        }
+        if (data.evolution2) {
+          chain.innerHTML += `<p></p><div class="ev1"><img src="${data.evolution2Image}" /><h2>${data.evolution2}</h2></div>`;
+        }
+        if (data.evolution3) {
+          chain.innerHTML += `<p></p><div class="ev1"><img src="${data.evolution3Image}" /><h2>${data.evolution3}</h2></div>`;
+        }
+
+        // === Spesial Evolution ===
+        const specialEvolution = document.querySelector(".modal-container .spesial-evolution");
+        const specialChain = specialEvolution.querySelector(".chain-flex");
+        specialChain.innerHTML = "";
+
+        let specialCount = 0;
+
+        // Mega 1
+        if (data.mega1Name && data.mega1Image) {
+          specialCount++;
+          specialChain.innerHTML += `
+            <div class="ev1">
+              <div class="img30px"><img src="${data.mega1Image}" alt="${data.mega1Name}"></div>
+              <div class="type-spesial">
+                <div class="types-ke1 ${data.mega1Type1?.toLowerCase()}"><img src="/imgs/types/${data.mega1Type1}.png" alt="${data.mega1Type1}"></div>
+                ${data.mega1Type2 ? `<div class="types-ke1 ${data.mega1Type2.toLowerCase()}"><img src="/imgs/types/${data.mega1Type2}.png" alt="${data.mega1Type2}"></div>` : ""}
+              </div>
+              <h2>${data.mega1Name}</h2>
+            </div>
+          `;
+        }
+
+        // Mega 2
+        if (data.mega2Name && data.mega2Image) {
+          specialCount++;
+          specialChain.innerHTML += `
+            <div class="ev1">
+              <div class="img30px"><img src="${data.mega2Image}" alt="${data.mega2Name}"></div>
+              <div class="type-spesial">
+                <div class="types-ke1 ${data.mega2Type1?.toLowerCase()}"><img src="/imgs/types/${data.mega2Type1}.png" alt="${data.mega2Type1}"></div>
+                ${data.mega2Type2 ? `<div class="types-ke1 ${data.mega2Type2.toLowerCase()}"><img src="/imgs/types/${data.mega2Type2}.png" alt="${data.mega2Type2}"></div>` : ""}
+              </div>
+              <h2>${data.mega2Name}</h2>
+            </div>
+          `;
+        }
+
+        // Gigantamax
+        if (data.gmaxName && data.gmaxImage) {
+          specialCount++;
+          specialChain.innerHTML += `
+            <div class="ev1">
+              <div class="img30px"><img src="${data.gmaxImage}" alt="${data.gmaxName}"></div>
+              <div class="type-spesial">
+                <div class="types-ke1 ${data.gmaxType1?.toLowerCase()}"><img src="/imgs/types/${data.gmaxType1}.png" alt="${data.gmaxType1}"></div>
+                ${data.gmaxType2 ? `<div class="types-ke1 ${data.gmaxType2.toLowerCase()}"><img src="/imgs/types/${data.gmaxType2}.png" alt="${data.gmaxType2}"></div>` : ""}
+              </div>
+              <h2>${data.gmaxName}</h2>
+            </div>
+          `;
+        }
+
+        // Tampilkan atau sembunyikan bagian Spesial Evolution
+        specialEvolution.style.display = specialCount > 0 ? "block" : "none";
+
+        // Reset dan set class berdasarkan jumlah
+        specialChain.classList.remove("one-special", "two-special", "three-special");
+        if (specialCount === 1) specialChain.classList.add("one-special");
+        else if (specialCount === 2) specialChain.classList.add("two-special");
+        else if (specialCount >= 3) specialChain.classList.add("three-special");
+
+        // === Tampilkan Modal ===
+        modal.classList.add("active");
+
+      } catch (err) {
+        console.error("Gagal ambil data:", err);
+      }
+    });
+  });
+
+  // === Tombol Close Modal ===
+  document.querySelector(".modal-container button").addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+});
+</script>
+
+
+</body>
+</html>

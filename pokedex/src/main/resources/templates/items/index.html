@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    td img{
+        width: 50px;
+    }
+</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" th:href="@{/css/dashboard.css}" />
+  <title>PokéDex Items</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside>
+      <div class="toggle">
+        <div class="logo">
+          <h2>Poke<span class="danger">Dex</span></h2>
+        </div>
+        <div class="close" id="close-btn">
+          <span class="material-icons-sharp">close</span>
+        </div>
+        <div class="dark-mode">
+          <span class="material-icons-sharp active">light_mode</span>
+          <span class="material-icons-sharp">dark_mode</span>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <a href="#"><span class="material-icons-sharp">dashboard</span><h3>Dashboard</h3></a>
+        <a href="#"><span class="material-icons-sharp">person_outline</span><h3>Users</h3></a>
+        <a href="#"><span class="material-icons-sharp">receipt_long</span><h3>History</h3></a>
+        <a href="/items" class="active"><span class="material-icons-sharp">insights</span><h3>Items Crud</h3></a>
+        <a href="#"><span class="material-icons-sharp">mail_outline</span><h3>Tickets</h3><span class="message-count">27</span></a>
+        <a href="/pokemon/list"><span class="material-icons-sharp">inventory</span><h3>Pokedex List</h3></a>
+        <a href="#"><span class="material-icons-sharp">report_gmailerrorred</span><h3>Reports</h3></a>
+        <a href="#"><span class="material-icons-sharp">settings</span><h3>Settings</h3></a>
+        <a href="#"><span class="material-icons-sharp">add</span><h3>New Login</h3></a>
+        <a href="#"><span class="material-icons-sharp">logout</span><h3>Logout</h3></a>
+        
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main>
+      <figure class="jumlah-items">
+        
+        <div class="items-all">
+          <p>All Items</p>
+          <div class="item2">
+            <h2>231</h2>
+            <div class="img15x"><img src="img/bag.png" alt="" /></div>
+            
+          </div>
+          
+        </div>
+        
+      </figure>
+
+      <div class="item-bg">
+        <header class="tabel-head">
+          <h2>Data Items</h2>
+          <form th:action="@{/items}" method="get" class="search">
+            <input type="search" name="keyword" th:value="${keyword}" placeholder="Search here" />
+            <select name="category">
+      <option value="">All Categories</option>
+      <option th:each="cat : ${categoryList}"
+              th:value="${cat}"
+              th:text="${cat}"
+              th:selected="${cat == selectedCategory}">
+      </option>
+    </select>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <div class="create"><a href="/items/create">Create +</a></div>
+        </header>
+
+        <table class="tabel">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Picture</th>
+              <th>Name</th>
+              <th>Effect</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="item, iterStat : ${items}">
+              <td th:text="${currentPage * 5 + iterStat.index + 1}"></td>
+              <td><img th:src="@{'/images/' + ${item.picture}}" width="50px" /></td>
+              <td th:text="${item.name_item}">Antidote</td>
+              <td th:text="${item.effect}">Efek</td>
+              <td th:text="${item.category}">Candy</td>
+              <td class="last">
+                <div class="edit-items"
+                  th:attr="data-id=${item.id},
+                           data-name_item=${item.name_item},
+                            data-category=${item.category},
+                           data-effect=${item.effect},
+                           data-picture=${item.picture}"
+                  onclick="openEditModal(this)" style="cursor:pointer;">
+                  <i class="fa-solid fa-pen-to-square"></i> Edit
+                </div>
+                <div class="delete-items" th:attr="onclick=|confirmDelete(${item.id})|" style="cursor:pointer;">
+                  <i class="fa-solid fa-trash"></i> Delete
+                </div>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+     <div class="pagination">
+
+  <!-- Tombol Prev -->
+  <div class="prev">
+    <a th:href="@{|/items?page=${currentPage == 0 ? totalPages - 1 : currentPage - 1}&size=5${keyword != null ? '&keyword=' + keyword : ''}|}">
+      <i class="fa-solid fa-chevron-left"></i> Prev
+    </a>
+  </div>
+
+  <ul style="list-style: none; display: flex; gap: 6px; padding: 0;">
+
+    <!-- Halaman pertama -->
+    <li th:if="${currentPage > 1}"
+        th:classappend="${currentPage == 0} ? 'active'">
+      <a th:href="@{|/items?page=0&size=5${keyword != null ? '&keyword=' + keyword : ''}|}" th:text="1"></a>
+    </li>
+
+    <!-- Ellipsis sebelum -->
+    <li th:if="${currentPage > 2}" >
+      <span>...</span>
+    </li>
+
+    <!-- Halaman sekarang -->
+    <li class="active">
+      <a th:href="@{|/items?page=${currentPage}&size=5${keyword != null ? '&keyword=' + keyword : ''}|}"
+         th:text="${currentPage + 1}"></a>
+    </li>
+
+    <!-- Halaman berikutnya -->
+    <li th:if="${currentPage + 1 < totalPages - 1}"
+        th:classappend="${currentPage + 1 == currentPage} ? 'active'">
+      <a th:href="@{|/items?page=${currentPage + 1}&size=5${keyword != null ? '&keyword=' + keyword : ''}|}"
+         th:text="${currentPage + 2}"></a>
+    </li>
+
+    <!-- Ellipsis sesudah -->
+    <li th:if="${currentPage + 2 < totalPages - 1}">
+      <span>...</span>
+    </li>
+
+    <!-- Halaman terakhir -->
+    <li th:if="${currentPage < totalPages - 1}"
+        th:classappend="${currentPage == totalPages - 1} ? 'active'">
+      <a th:href="@{|/items?page=${totalPages - 1}&size=5${keyword != null ? '&keyword=' + keyword : ''}|}"
+         th:text="${totalPages}"></a>
+    </li>
+  </ul>
+
+  <!-- Tombol Next -->
+  <div class="next">
+    <a th:href="@{|/items?page=${currentPage == totalPages - 1 ? 0 : currentPage + 1}&size=5${keyword != null ? '&keyword=' + keyword : ''}|}">
+      Next <i class="fa-solid fa-chevron-right"></i>
+    </a>
+  </div>
+
+</div>
+
+
+
+    </main>
+
+    <!-- Right Section -->
+   
+
+  <!-- Edit Modal -->
+ <div id="editModal" class="modal" style="display:none;">
+  <div class="create-data">
+    <div class="form-container">
+      <h2>Edit Item</h2>
+      <span onclick="closeModal()" style="float:right; cursor:pointer; font-size: 30px;">&times;</span>
+
+      <form th:action="@{/items/update}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" id="editId" />
+        <input type="hidden" name="oldPicture" id="oldPicture" />
+
+        <div class="form-group">
+          <label for="editName">Name:</label>
+          <input type="text" name="name_item" id="editName" required />
+        </div>
+        <div class="form-group">
+          <label for="editName">Category:</label>
+          <input type="text" name="category" id="editcategory" required />
+        </div>
+        <div class="form-group">
+          <label for="editEffect">Effect:</label>
+          <input name="effect" id="editEffect"  />
+        </div>
+
+        <div class="form-group">
+          <label>Foto Lama</label>
+          <img id="editPicturePreview" src="" alt="No image" style="max-width: 100px; display: block; margin-bottom: 10px;" />
+        </div>
+
+        <div class="form-group">
+          <label for="editPicture">New Picture (optional):</label>
+          <input type="file" name="picture" id="editPicture" />
+        </div>
+
+        <div class="buttons-action">
+          <button type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <!-- JS -->
+  <script th:src="@{/js/dashboard.js}"></script>
+  <script>
+   function openEditModal(element) {
+  const id = element.getAttribute('data-id');
+  const nameItem = element.getAttribute('data-name_item');
+  const category = element.getAttribute('data-category');
+  const effect = element.getAttribute('data-effect');
+  const picture = element.getAttribute('data-picture');
+
+  document.getElementById('editId').value = id;
+  document.getElementById('editName').value = nameItem;
+  document.getElementById('editEffect').value = effect;
+  document.getElementById('editcategory').value = category;
+    document.getElementById('oldPicture').value = picture;
+    console.log("Category:", category);
+  // ✅ Tampilkan gambar lama
+  const preview = document.getElementById('editPicturePreview');
+  preview.src = '/images/' + picture;
+
+  document.getElementById('editModal').style.display = 'block';
+}
+
+    function closeModal() {
+      document.getElementById('editModal').style.display = 'none';
+    }
+
+    function confirmDelete(itemId) {
+      if (confirm("Apakah kamu yakin ingin menghapus item ini?")) {
+        window.location.href = "/items/delete/" + itemId;
+      }
+    }
+  </script>
+</body>
+
+</html>
